@@ -1,0 +1,1189 @@
+/**
+ * ASTMED LMS Frontend Styles
+ * Modern, responsive ve IONM temasına uygun tasarım
+ */
+
+:root {
+    --astmed-primary: #2c5aa0;
+    --astmed-secondary: #34d399;
+    --astmed-accent: #f59e0b;
+    --astmed-danger: #ef4444;
+    --astmed-success: #10b981;
+    --astmed-warning: #f59e0b;
+    --astmed-info: #3b82f6;
+    --astmed-dark: #1f2937;
+    --astmed-light: #f8fafc;
+    --astmed-border: #e5e7eb;
+    --astmed-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --astmed-radius: 8px;
+    --astmed-transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   GENEL STILLER
+   ========================================================================== */
+
+.astmed-lms-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.astmed-lms-card {
+    background: white;
+    border-radius: var(--astmed-radius);
+    box-shadow: var(--astmed-shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--astmed-border);
+    transition: var(--astmed-transition);
+}
+
+.astmed-lms-card:hover {
+    box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.astmed-lms-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--astmed-radius);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--astmed-transition);
+    line-height: 1;
+    gap: 8px;
+}
+
+.astmed-lms-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--astmed-shadow);
+}
+
+.astmed-lms-button-primary {
+    background: var(--astmed-primary);
+    color: white;
+}
+
+.astmed-lms-button-primary:hover {
+    background: #1e3a8a;
+    color: white;
+}
+
+.astmed-lms-button-secondary {
+    background: var(--astmed-secondary);
+    color: white;
+}
+
+.astmed-lms-button-success {
+    background: var(--astmed-success);
+    color: white;
+}
+
+.astmed-lms-button-danger {
+    background: var(--astmed-danger);
+    color: white;
+}
+
+.astmed-lms-button-outline {
+    background: transparent;
+    border: 2px solid var(--astmed-primary);
+    color: var(--astmed-primary);
+}
+
+.astmed-lms-button-outline:hover {
+    background: var(--astmed-primary);
+    color: white;
+}
+
+/* ==========================================================================
+   KURS LİSTESİ
+   ========================================================================== */
+
+.astmed-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.astmed-course-card {
+    background: white;
+    border-radius: var(--astmed-radius);
+    overflow: hidden;
+    box-shadow: var(--astmed-shadow);
+    transition: var(--astmed-transition);
+    border: 1px solid var(--astmed-border);
+}
+
+.astmed-course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+.astmed-course-thumbnail {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--astmed-primary), var(--astmed-secondary));
+    position: relative;
+    overflow: hidden;
+}
+
+.astmed-course-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.astmed-course-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--astmed-accent);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.astmed-course-content {
+    padding: 20px;
+}
+
+.astmed-course-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--astmed-dark);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.astmed-course-excerpt {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+}
+
+.astmed-course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.astmed-course-duration,
+.astmed-course-level,
+.astmed-course-students {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.astmed-course-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--astmed-primary);
+    margin-bottom: 16px;
+}
+
+.astmed-course-price .original-price {
+    font-size: 14px;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.astmed-course-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   DERS GÖRÜNTÜLEME
+   ========================================================================== */
+
+.astmed-lesson-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.astmed-lesson-content {
+    background: white;
+    border-radius: var(--astmed-radius);
+    padding: 32px;
+    box-shadow: var(--astmed-shadow);
+}
+
+.astmed-lesson-sidebar {
+    background: white;
+    border-radius: var(--astmed-radius);
+    padding: 24px;
+    box-shadow: var(--astmed-shadow);
+    height: fit-content;
+}
+
+.astmed-lesson-video {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--astmed-radius);
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: var(--astmed-dark);
+}
+
+.astmed-lesson-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.astmed-lesson-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--astmed-dark);
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.astmed-lesson-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 32px;
+}
+
+.astmed-lesson-progress {
+    background: var(--astmed-light);
+    border-radius: var(--astmed-radius);
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.astmed-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.astmed-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--astmed-primary), var(--astmed-secondary));
+    transition: width 0.3s ease;
+}
+
+.astmed-progress-text {
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+}
+
+/* ==========================================================================
+   QUIZ STİLLERİ
+   ========================================================================== */
+
+.astmed-quiz-container {
+    background: white;
+    border-radius: var(--astmed-radius);
+    padding: 32px;
+    box-shadow: var(--astmed-shadow);
+    margin: 24px 0;
+}
+
+.astmed-quiz-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--astmed-border);
+}
+
+.astmed-quiz-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--astmed-dark);
+    margin: 0 0 8px 0;
+}
+
+.astmed-quiz-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.astmed-quiz-timer {
+    position: sticky;
+    top: 20px;
+    background: var(--astmed-warning);
+    color: white;
+    padding: 12px 20px;
+    border-radius: var(--astmed-radius);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.astmed-question {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--astmed-light);
+    border-radius: var(--astmed-radius);
+    border: 1px solid var(--astmed-border);
+}
+
+.astmed-question-number {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--astmed-primary);
+    margin-bottom: 8px;
+}
+
+.astmed-question-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--astmed-dark);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.astmed-question-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.astmed-option {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: white;
+    border: 2px solid var(--astmed-border);
+    border-radius: var(--astmed-radius);
+    cursor: pointer;
+    transition: var(--astmed-transition);
+}
+
+.astmed-option:hover {
+    border-color: var(--astmed-primary);
+    background: #f0f7ff;
+}
+
+.astmed-option.selected {
+    border-color: var(--astmed-primary);
+    background: #dbeafe;
+}
+
+.astmed-option.correct {
+    border-color: var(--astmed-success);
+    background: #d1fae5;
+}
+
+.astmed-option.incorrect {
+    border-color: var(--astmed-danger);
+    background: #fee2e2;
+}
+
+.astmed-option input[type="radio"] {
+    margin-right: 12px;
+    accent-color: var(--astmed-primary);
+}
+
+.astmed-quiz-actions {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px solid var(--astmed-border);
+}
+
+/* ==========================================================================
+   ABONELİK STİLLERİ
+   ========================================================================== */
+
+.astmed-subscription-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.astmed-plan-card {
+    background: white;
+    border: 2px solid var(--astmed-border);
+    border-radius: var(--astmed-radius);
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    transition: var(--astmed-transition);
+}
+
+.astmed-plan-card.featured {
+    border-color: var(--astmed-primary);
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px -12px rgba(44, 90, 160, 0.3);
+}
+
+.astmed-plan-card.featured::before {
+    content: "En Popüler";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--astmed-primary);
+    color: white;
+    padding: 4px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.astmed-plan-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--astmed-dark);
+    margin: 0 0 8px 0;
+}
+
+.astmed-plan-price {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--astmed-primary);
+    margin: 0 0 4px 0;
+}
+
+.astmed-plan-cycle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.astmed-plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+}
+
+.astmed-plan-features li {
+    padding: 8px 0;
+    color: #374151;
+    font-size: 14px;
+    position: relative;
+    padding-left: 24px;
+}
+
+.astmed-plan-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--astmed-success);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   KULLANICI PANELİ
+   ========================================================================== */
+
+.astmed-dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.astmed-sidebar {
+    background: white;
+    border-radius: var(--astmed-radius);
+    padding: 24px;
+    box-shadow: var(--astmed-shadow);
+    height: fit-content;
+}
+
+.astmed-sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.astmed-sidebar-menu li {
+    margin-bottom: 8px;
+}
+
+.astmed-sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #6b7280;
+    text-decoration: none;
+    border-radius: var(--astmed-radius);
+    transition: var(--astmed-transition);
+    gap: 12px;
+}
+
+.astmed-sidebar-menu a:hover,
+.astmed-sidebar-menu a.active {
+    background: var(--astmed-primary);
+    color: white;
+}
+
+.astmed-main-content {
+    background: white;
+    border-radius: var(--astmed-radius);
+    padding: 32px;
+    box-shadow: var(--astmed-shadow);
+}
+
+/* ==========================================================================
+   SERTİFİKA STİLLERİ
+   ========================================================================== */
+
+.astmed-certificate-preview {
+    background: white;
+    border: 2px solid var(--astmed-border);
+    border-radius: var(--astmed-radius);
+    padding: 40px;
+    text-align: center;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.astmed-certificate-preview::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(44, 90, 160, 0.05) 50%, transparent 100%);
+    pointer-events: none;
+}
+
+.astmed-certificate-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--astmed-primary);
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.astmed-certificate-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    margin: 0 0 32px 0;
+}
+
+.astmed-certificate-recipient {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--astmed-dark);
+    margin: 16px 0;
+    border-bottom: 2px solid var(--astmed-primary);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   RESPONSIVE TASARIM
+   ========================================================================== */
+
+@media (max-width: 768px) {
+@media (max-width: 768px) {
+    .astmed-lms-container {
+        padding: 0 16px;
+    }
+    
+    .astmed-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .astmed-lesson-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .astmed-lesson-sidebar {
+        order: -1;
+    }
+    
+    .astmed-dashboard {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .astmed-sidebar {
+        order: -1;
+    }
+    
+    .astmed-subscription-plans {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .astmed-plan-card.featured {
+        transform: none;
+    }
+    
+    .astmed-course-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .astmed-quiz-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .astmed-lesson-video {
+        height: 250px;
+    }
+    
+    .astmed-lms-card {
+        padding: 16px;
+    }
+    
+    .astmed-lesson-content {
+        padding: 24px;
+    }
+    
+    .astmed-main-content {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .astmed-course-actions {
+        flex-direction: column;
+    }
+    
+    .astmed-lms-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .astmed-certificate-title {
+        font-size: 24px;
+    }
+    
+    .astmed-certificate-preview {
+        padding: 24px;
+    }
+    
+    .astmed-plan-card {
+        padding: 24px 16px;
+    }
+}
+
+/* ==========================================================================
+   ANIMASYONLAR VE EFEKTLER
+   ========================================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.astmed-fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.astmed-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.astmed-slide-in {
+    animation: slideInRight 0.5s ease-out;
+}
+
+/* ==========================================================================
+   LOADING VE SKELETON STİLLERİ
+   ========================================================================== */
+
+.astmed-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+.astmed-spinner {
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid var(--astmed-primary);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin-right: 12px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.astmed-skeleton {
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.astmed-skeleton-text {
+    height: 16px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.astmed-skeleton-title {
+    height: 24px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    width: 60%;
+}
+
+.astmed-skeleton-image {
+    height: 200px;
+    border-radius: var(--astmed-radius);
+    margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   ALERT VE BİLDİRİM STİLLERİ
+   ========================================================================== */
+
+.astmed-alert {
+    padding: 16px 20px;
+    border-radius: var(--astmed-radius);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.astmed-alert-success {
+    background: #d1fae5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+}
+
+.astmed-alert-error {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.astmed-alert-warning {
+    background: #fef3c7;
+    border: 1px solid #fed7aa;
+    color: #92400e;
+}
+
+.astmed-alert-info {
+    background: #dbeafe;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+}
+
+.astmed-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 400px;
+    background: white;
+    border-radius: var(--astmed-radius);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--astmed-border);
+    animation: slideInRight 0.3s ease-out;
+}
+
+.astmed-notification-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid var(--astmed-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.astmed-notification-title {
+    font-weight: 600;
+    color: var(--astmed-dark);
+    margin: 0;
+}
+
+.astmed-notification-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.astmed-notification-body {
+    padding: 12px 20px 16px;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   MODAL STİLLERİ
+   ========================================================================== */
+
+.astmed-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.astmed-modal {
+    background: white;
+    border-radius: var(--astmed-radius);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.95);
+    animation: modalIn 0.3s ease-out forwards;
+}
+
+@keyframes modalIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+.astmed-modal-header {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid var(--astmed-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.astmed-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--astmed-dark);
+    margin: 0;
+}
+
+.astmed-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--astmed-transition);
+}
+
+.astmed-modal-close:hover {
+    background: #f3f4f6;
+    color: var(--astmed-dark);
+}
+
+.astmed-modal-body {
+    padding: 16px 24px 24px;
+}
+
+.astmed-modal-footer {
+    padding: 16px 24px 24px;
+    border-top: 1px solid var(--astmed-border);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+/* ==========================================================================
+   FORM STİLLERİ
+   ========================================================================== */
+
+.astmed-form-group {
+    margin-bottom: 20px;
+}
+
+.astmed-form-label {
+    display: block;
+    font-weight: 600;
+    color: var(--astmed-dark);
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.astmed-form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--astmed-border);
+    border-radius: var(--astmed-radius);
+    font-size: 16px;
+    transition: var(--astmed-transition);
+    background: white;
+}
+
+.astmed-form-input:focus {
+    outline: none;
+    border-color: var(--astmed-primary);
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.astmed-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.astmed-form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.astmed-form-error {
+    color: var(--astmed-danger);
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+.astmed-form-help {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+/* ==========================================================================
+   TABLET STİLLERİ
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .astmed-courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .astmed-lesson-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .astmed-dashboard {
+        grid-template-columns: 200px 1fr;
+    }
+    
+    .astmed-subscription-plans {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* ==========================================================================
+   PRINT STİLLERİ
+   ========================================================================== */
+
+@media print {
+    .astmed-lms-button,
+    .astmed-sidebar,
+    .astmed-notification,
+    .astmed-modal-overlay {
+        display: none !important;
+    }
+    
+    .astmed-lms-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .astmed-certificate-preview {
+        border: 2px solid #000;
+        page-break-inside: avoid;
+    }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+.astmed-text-center { text-align: center; }
+.astmed-text-left { text-align: left; }
+.astmed-text-right { text-align: right; }
+
+.astmed-hidden { display: none !important; }
+.astmed-visible { display: block !important; }
+
+.astmed-mb-0 { margin-bottom: 0 !important; }
+.astmed-mb-1 { margin-bottom: 8px !important; }
+.astmed-mb-2 { margin-bottom: 16px !important; }
+.astmed-mb-3 { margin-bottom: 24px !important; }
+.astmed-mb-4 { margin-bottom: 32px !important; }
+
+.astmed-mt-0 { margin-top: 0 !important; }
+.astmed-mt-1 { margin-top: 8px !important; }
+.astmed-mt-2 { margin-top: 16px !important; }
+.astmed-mt-3 { margin-top: 24px !important; }
+.astmed-mt-4 { margin-top: 32px !important; }
+
+.astmed-p-0 { padding: 0 !important; }
+.astmed-p-1 { padding: 8px !important; }
+.astmed-p-2 { padding: 16px !important; }
+.astmed-p-3 { padding: 24px !important; }
+.astmed-p-4 { padding: 32px !important; }
+
+.astmed-text-sm { font-size: 14px !important; }
+.astmed-text-base { font-size: 16px !important; }
+.astmed-text-lg { font-size: 18px !important; }
+.astmed-text-xl { font-size: 20px !important; }
+.astmed-text-2xl { font-size: 24px !important; }
+
+.astmed-font-normal { font-weight: 400 !important; }
+.astmed-font-medium { font-weight: 500 !important; }
+.astmed-font-semibold { font-weight: 600 !important; }
+.astmed-font-bold { font-weight: 700 !important; }
+
+.astmed-text-primary { color: var(--astmed-primary) !important; }
+.astmed-text-secondary { color: var(--astmed-secondary) !important; }
+.astmed-text-success { color: var(--astmed-success) !important; }
+.astmed-text-danger { color: var(--astmed-danger) !important; }
+.astmed-text-warning { color: var(--astmed-warning) !important; }
+.astmed-text-info { color: var(--astmed-info) !important; }
+.astmed-text-muted { color: #6b7280 !important; }
+
+.astmed-bg-primary { background-color: var(--astmed-primary) !important; }
+.astmed-bg-secondary { background-color: var(--astmed-secondary) !important; }
+.astmed-bg-success { background-color: var(--astmed-success) !important; }
+.astmed-bg-danger { background-color: var(--astmed-danger) !important; }
+.astmed-bg-warning { background-color: var(--astmed-warning) !important; }
+.astmed-bg-info { background-color: var(--astmed-info) !important; }
+.astmed-bg-light { background-color: var(--astmed-light) !important; }
+
+.astmed-border-0 { border: none !important; }
+.astmed-border { border: 1px solid var(--astmed-border) !important; }
+.astmed-border-primary { border-color: var(--astmed-primary) !important; }
+.astmed-border-success { border-color: var(--astmed-success) !important; }
+.astmed-border-danger { border-color: var(--astmed-danger) !important; }
+
+.astmed-rounded { border-radius: var(--astmed-radius) !important; }
+.astmed-rounded-full { border-radius: 50% !important; }
+
+.astmed-shadow { box-shadow: var(--astmed-shadow) !important; }
+.astmed-shadow-none { box-shadow: none !important; }
+
+.astmed-w-full { width: 100% !important; }
+.astmed-h-full { height: 100% !important; }
+
+.astmed-flex { display: flex !important; }
+.astmed-inline-flex { display: inline-flex !important; }
+.astmed-block { display: block !important; }
+.astmed-inline-block { display: inline-block !important; }
+.astmed-grid { display: grid !important; }
+
+.astmed-justify-center { justify-content: center !important; }
+.astmed-justify-between { justify-content: space-between !important; }
+.astmed-justify-end { justify-content: flex-end !important; }
+
+.astmed-items-center { align-items: center !important; }
+.astmed-items-start { align-items: flex-start !important; }
+.astmed-items-end { align-items: flex-end !important; }
+
+.astmed-gap-1 { gap: 8px !important; }
+.astmed-gap-2 { gap: 16px !important; }
+.astmed-gap-3 { gap: 24px !important; }
+.astmed-gap-4 { gap: 32px !important; }med-lms-container {
+        padding: 0 16px;
+    }
+    
+    .astmed-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .astmed-lesson-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .astmed-lesson-sidebar {
+        order: -1;
+    }
+    
+    .ast
